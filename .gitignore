@@ -1,0 +1,8 @@
+.codesandbox
+.idea
+.cache
+
+dist
+node_modules
+
+sandbox.config.json
