@@ -51,8 +51,7 @@ export default class Image {
       fontFace,
       fontWieght,
       color,
-      backgroundColor,
-      defaultText
+      backgroundColor
     } = this;
 
     // Of course, TypeScript tells us what value is CanvasParams,
@@ -61,7 +60,7 @@ export default class Image {
     this.width = value?.width ?? value?.height ?? width;
     this.height = value?.height ?? value?.width ?? height;
 
-    this.text = value?.text ?? defaultText;
+    this.text = value?.text ?? this.defaultText;
     this.fontFace = value?.fontFace ?? fontFace;
     this.fontWieght = value?.fontWieght ?? fontWieght;
     this.color = value?.color ?? color;
