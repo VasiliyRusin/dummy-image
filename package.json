@@ -1,7 +1,7 @@
 {
   "name": "dummyimagejs",
   "version": "1.0.1",
-  "description": "",
+  "description": "Extremely simple image generator with customizable caching",
   "main": "docs/index.html",
   "scripts": {
     "serve": "parcel index.ts",
