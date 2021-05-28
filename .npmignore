@@ -1,0 +1,12 @@
+# based on .gitignore
+# except "dist" folder
+# append "docs" folder
+
+.codesandbox
+.idea
+.cache
+
+docs
+node_modules
+
+sandbox.config.json
