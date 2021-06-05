@@ -1,6 +1,10 @@
 {
+  // Change this to match your project
+  "include": ["src/**/*"],
+  
   "compilerOptions": {
     "strict": true,
+    "declaration": true,
     "module": "commonJS",
     "target": "ES5",
     "downlevelIteration": true,
@@ -14,6 +18,7 @@
       "dom"
     ],
     "rootDir": "src",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "outDir": "dist"
   }
 }
