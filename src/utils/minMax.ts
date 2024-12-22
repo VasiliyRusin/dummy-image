@@ -3,7 +3,7 @@ interface Params {
   max: number;
 }
 
-function normilezeParams(
+function normalizeParams(
   fn: (value: number, min: number, max: number) => number
 ) {
   return (value: number, min: number | Params, max?: number) => {
@@ -16,7 +16,7 @@ function normilezeParams(
   };
 }
 
-export default normilezeParams(
+export default normalizeParams(
   (value: number, min: number, max: number): number => {
     return Math.max(min, Math.min(value, max));
   }

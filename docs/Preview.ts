@@ -13,7 +13,7 @@ type PreviewState = {
 };
 
 export class Preview extends Component<PreviewProps, PreviewState> {
-  private debonecedUpdate: () => Promise<void>;
+  private readonly debouncedUpdate: () => Promise<void>;
   private imageManager: ImageManager = new ImageManager();
 
   state: PreviewState = {};
@@ -21,7 +21,7 @@ export class Preview extends Component<PreviewProps, PreviewState> {
   constructor() {
     super();
 
-    this.debonecedUpdate = debonce(this.update, 300);
+    this.debouncedUpdate = debonce(this.update, 300);
   }
 
   async componentDidMount() {
@@ -30,7 +30,7 @@ export class Preview extends Component<PreviewProps, PreviewState> {
 
   shouldComponentUpdate(props: PreviewProps, state: PreviewState) {
     if (state?.key !== Image.getKey(props.data)) {
-      this.debonecedUpdate();
+      this.debouncedUpdate();
     }
 
     return true;
@@ -49,6 +49,6 @@ export class Preview extends Component<PreviewProps, PreviewState> {
   };
 
   render(_: PreviewProps, { src }: PreviewState) {
-    return html`<img src="${src}" />`;
+    return html`<img alt="${src}" src="${src}" />`;
   }
 }

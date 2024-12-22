@@ -9,7 +9,7 @@ export default class Image {
   private text: string = this.defaultText;
   private fontFace: string =
     "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji";
-  private fontWieght: FontWeight = "normal";
+  private fontWeight: FontWeight = "normal";
   private color: string = "#000000";
   private backgroundColor: string = "#cccccc";
   private canvas: Canvas;
@@ -28,7 +28,7 @@ export default class Image {
       height,
       text,
       fontFace,
-      fontWieght,
+      fontWeight,
       color,
       backgroundColor
     } = this;
@@ -38,7 +38,7 @@ export default class Image {
       height,
       text,
       fontFace,
-      fontWieght,
+      fontWeight,
       color,
       backgroundColor
     };
@@ -49,7 +49,7 @@ export default class Image {
       width,
       height,
       fontFace,
-      fontWieght,
+      fontWeight,
       color,
       backgroundColor
     } = this;
@@ -62,7 +62,7 @@ export default class Image {
 
     this.text = value?.text ?? this.defaultText;
     this.fontFace = value?.fontFace ?? fontFace;
-    this.fontWieght = value?.fontWieght ?? fontWieght;
+    this.fontWeight = value?.fontWeight ?? fontWeight;
     this.color = value?.color ?? color;
     this.backgroundColor = value?.backgroundColor ?? backgroundColor;
   }

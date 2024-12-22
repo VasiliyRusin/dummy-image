@@ -7,12 +7,12 @@ export default class Canvas {
 
   private text: string;
   private fontFace: string;
-  private fontWieght: FontWeight;
+  private fontWeight: FontWeight;
   private width: number;
   private height: number;
-  private color: string;
-  private backgroundColor: string;
-  private ctx?: CanvasRenderingContext2D | null;
+  private readonly color: string;
+  private readonly backgroundColor: string;
+  private readonly ctx?: CanvasRenderingContext2D | null;
 
   constructor(params: CanvasParams) {
     this.el = document.createElement("canvas");
@@ -24,14 +24,14 @@ export default class Canvas {
       height,
       text,
       fontFace,
-      fontWieght,
+      fontWeight,
       color,
       backgroundColor
     } = params;
 
     this.text = text;
     this.fontFace = fontFace;
-    this.fontWieght = fontWieght;
+    this.fontWeight = fontWeight;
     this.color = color;
     this.backgroundColor = backgroundColor;
 
@@ -60,7 +60,7 @@ export default class Canvas {
   }
 
   private drawText(): void {
-    const { ctx, text, fontFace, fontWieght, width, height } = this;
+    const { ctx, text, fontFace, fontWeight, width, height } = this;
 
     if (ctx) {
       const fontSize = minMax((width / text.length) * 1.15, {
@@ -68,7 +68,7 @@ export default class Canvas {
         max: height / 2
       });
 
-      ctx.font = `${fontWieght} ${fontSize}px ${fontFace}`;
+      ctx.font = `${fontWeight} ${fontSize}px ${fontFace}`;
 
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
@@ -84,7 +84,7 @@ export default class Canvas {
 
   public async asBlob(): Promise<string | undefined> {
     return new Promise((resolve) =>
-      this.el?.toBlob((blob) => resolve(URL.createObjectURL(blob)))
+      this.el?.toBlob((blob) => blob && resolve(URL.createObjectURL(blob)))
     );
   }
 

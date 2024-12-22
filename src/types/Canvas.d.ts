@@ -5,7 +5,7 @@ export interface CanvasParams {
   height: number;
   text: string;
   fontFace: string;
-  fontWieght: FontWeight;
+  fontWeight: FontWeight;
   color: string;
   backgroundColor: string;
 }

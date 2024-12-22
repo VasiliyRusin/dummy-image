@@ -36,7 +36,7 @@ const imageManager = new ImageManager();
 const image = imageManager.createImage({
   width: 1012,
   height: 300,
-  fontWieght: 700,
+  fontWeight: 700,
   color: "#000000",
   backgroundColor: "#f7e017",
   text: "🎉  DummyImageJS  🎉"
@@ -59,7 +59,7 @@ interface ImageParams {
   height?: number;
   text?: string;
   fontFace?: string;
-  fontWieght?: FontWeight;
+  fontWeight?: FontWeight;
   color?: string;
   backgroundColor?: string;
 }
@@ -140,7 +140,7 @@ interface ImageParams {
   height?: number;
   text?: string;
   fontFace?: string;
-  fontWieght?: FontWeight;
+  fontWeight?: FontWeight;
   color?: string;
   backgroundColor?: string;
 }

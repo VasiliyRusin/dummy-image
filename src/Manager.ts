@@ -10,7 +10,7 @@ export default abstract class Manager<T> extends Singleton
     return "Manager";
   }
 
-  public [Symbol.iterator](): IterableIterator<[string, T]> {
+  public [Symbol.iterator](): MapIterator<[string, T]> {
     return this.state[Symbol.iterator]();
   }
 
@@ -41,15 +41,15 @@ export default abstract class Manager<T> extends Singleton
     return this.state.set(key, value) as this;
   }
 
-  public entries(): IterableIterator<[string, T]> {
+  public entries(): MapIterator<[string, T]> {
     return this.state.entries();
   }
 
-  public keys(): IterableIterator<string> {
+  public keys(): MapIterator<string> {
     return this.state.keys();
   }
 
-  public values(): IterableIterator<T> {
+  public values(): MapIterator<T> {
     return this.state.values();
   }
 }
